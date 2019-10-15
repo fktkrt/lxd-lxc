@@ -32,7 +32,7 @@ networks:
   type: ""
 storage_pools:
 - config:
-    size: 1GB
+    size: 2GB
   description: ""
   name: default
   driver: btrfs
