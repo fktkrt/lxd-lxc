@@ -1,4 +1,4 @@
-# LXD-LXC behind nginx
+# LXD-LXC nginx frontend
 
 ## install lxd on Debian
 
