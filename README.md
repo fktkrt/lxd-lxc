@@ -63,6 +63,7 @@ Sampel output if you have zero containers
 +------+-------+------+------+------+-----------+
 ```
 
+## Create the frontend container
 You can create your nginx container named frontend:
 
 ```
@@ -121,6 +122,7 @@ Logout
 `logout`
 
 
+## Test the setup
 If you curl your containers ip address by
 
 `curl http://10.39.244.187`
@@ -172,6 +174,8 @@ You should see an output like this:
     body {
 ...
 ```
+
+## Cleanup
 
 You can stop your container by
 
