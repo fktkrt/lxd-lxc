@@ -183,4 +183,4 @@ You can stop your container by
 
 And delete it by
 
-`lxc delete fronted`
+`lxc delete frontend`
