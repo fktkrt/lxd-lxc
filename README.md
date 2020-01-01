@@ -10,12 +10,15 @@ snap install lxd
 ```
 
 Your output will look like this
+
 `lxd 3.18 from 'canonical' installed`
 
 Update your current PATH
+
 `. /etc/profile.d/apps-bin-path.sh`
 
 You can initalize your lxd config now 
+
 `lxd init`
 
 Example config printed in yml
