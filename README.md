@@ -5,8 +5,8 @@
 First, install snapd and lxd
 
 ```
-apt install snapd
-snap install lxd
+$ apt install snapd
+$ snap install lxd
 ```
 
 Your output will look like this
@@ -15,11 +15,11 @@ Your output will look like this
 
 Update your current PATH
 
-`. /etc/profile.d/apps-bin-path.sh`
+` $ . /etc/profile.d/apps-bin-path.sh`
 
 You can initalize your lxd config now 
 
-`lxd init`
+`$ lxd init`
 
 Example config printed in yml
 
@@ -56,7 +56,7 @@ profiles:
 cluster: null
 ```
 
-You can use `lxd list` to view your available containers
+You can use ` $ lxd list` to view your available containers
 
 Sampel output if you have zero containers
 
@@ -70,12 +70,12 @@ Sampel output if you have zero containers
 You can create your nginx container named frontend:
 
 ```
-lxc launch ubuntu:18.04 frontend
+$lxc launch ubuntu:18.04 frontend
 ```
 
 Note that you can list the available versions of the given distro by:
 
-`lxc image list image:`
+`$ lxc image list image:`
 
 If you list your images now, you can see your frontend
 
@@ -89,18 +89,18 @@ If you list your images now, you can see your frontend
 
 Login to the frontend with the following command
 
-`lxc exec frontend -- sudo --login --user ubuntu`
+`$ lxc exec frontend -- sudo --login --user ubuntu`
 
 Install nginx on the image
 
 ```
-sudo apt update
-sudo apt install nginx
+$ sudo apt update
+$ sudo apt install nginx
 ```
 
 Edit the config file:
 
-`sudo nano /var/www/html/index.nginx-debian.html`
+`$ sudo nano /var/www/html/index.nginx-debian.html`
 
 ```
 <!DOCTYPE html>
@@ -122,13 +122,13 @@ Edit the config file:
 
 Logout
 
-`logout`
+`$ logout`
 
 
 ## Test the setup
 If you curl your containers ip address by
 
-`curl http://10.39.244.187`
+`$ curl http://10.39.244.187`
 
 You should get the content of the edited file.
 
@@ -144,7 +144,7 @@ sudo -E bash -c 'iptables -t nat -I PREROUTING -i eth0 -p TCP -d $PUBLIC_IP --dp
 
 List iptables routes by
 
-`sudo iptables -t nat -L PREROUTING`
+`$ sudo iptables -t nat -L PREROUTING`
 
 Output
 
@@ -155,7 +155,7 @@ DNAT       tcp  --  anywhere             192.168.163.128      tcp dpt:http /* fo
 
 If you curl your host's address
 
-` curl --verbose  'http://192.168.163.128'`
+`$ curl --verbose  'http://192.168.163.128'`
 
 You should see an output like this:
 
@@ -180,10 +180,10 @@ You should see an output like this:
 
 ## Cleanup
 
-You can stop your container by
+You can stop your container
 
-`lxc stop frontend`
+`$ lxc stop frontend`
 
-And delete it by
+Then delete it
 
-`lxc delete frontend`
+`$ lxc delete frontend`
